@@ -11,3 +11,11 @@ require 'rex/powershell/payload'
 require 'rex/powershell/psh_methods'
 require 'rex/powershell/command'
 
+
+module Rex
+    module Powershell
+
+        def self.read_script(script_path)
+            Rex::Powershell::Script.new(script_path)
+        end
+        
