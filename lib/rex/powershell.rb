@@ -40,4 +40,9 @@ module Rex
 
             new_subs
         end
-        
+
+        def self.to_powershell(str, name = "buf")
+            return Rex::Powershell::Script.to_byte_array(str, name)
+        end
+    end
+end
