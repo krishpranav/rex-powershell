@@ -23,4 +23,8 @@ module Command
         psh.sub_funcs if opts[:sub_funcs]
         psh.compress_code(eof)
     end
+
+    def self.decompress_script(script_in)
+        Rex::Powershell::Script.new(script_in).decompress_code
+    end
     
