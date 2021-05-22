@@ -9,3 +9,10 @@ module Powershell
         UNIX_EOL_REGEX = Regexp.new(/[\n]+/)
         WHITESPACE_REGEX = Regexp.new(/\s+/)
         EMPTY_LINE_REGEX = Regexp.new(/^$|^\s+$/)
+
+        def strip_comments
+            code.gsub!(MULTI_LINE_COMMENTS_REGEX, '')
+            code.gsub!(SINGLE_LINE_COMMENTS_REGEX, '')
+            code 
+        end
+        
