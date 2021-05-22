@@ -10,4 +10,8 @@ module Command
         psh.sub_funcs if opts[:sub_funcs]
         psh.encode_code(eof)
     end
+
+    def self.decode_script(script_in)
+        Rex::Powershell::Script.new(script_in).decode_code
+    end
     
