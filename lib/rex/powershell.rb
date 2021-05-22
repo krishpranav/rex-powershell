@@ -18,4 +18,16 @@ module Rex
         def self.read_script(script_path)
             Rex::Powershell::Script.new(script_path)
         end
+
+        def self.make_subs(script, subs)
+            if ::File.file?(script)
+                script = ::File.read(script)
+            end
+
+            subs.each do |set|
+                script.gsub!(set[0], set[1])
+            end
+
+            script 
+        end
         
