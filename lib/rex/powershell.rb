@@ -30,4 +30,14 @@ module Rex
 
             script 
         end
+
+        def self.process_subs(subs)
+            return [] if subs.nil? or subs.empty?
+            new_subs = []
+            subs.split(';').each do |set|
+                new_subs << set.split(',', 2)
+            end
+
+            new_subs
+        end
         
